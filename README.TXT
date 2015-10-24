@@ -1,4 +1,9 @@
 Mess
+
+To Run already compiled run "java -jar project.jar" in linux or click project.jar in the "dist" folder.
+If compiling in netbeans use clean build.
+
+
 Do following before watching it in action  ....
 
 
