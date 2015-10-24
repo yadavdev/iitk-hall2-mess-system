@@ -13,5 +13,5 @@ public class price {
   public static  int egg = 6;
   public static  int nmilk  = 9;
   public static  int butter = 5;
-  
+  public static int paneerbhurzi = 15;
     }

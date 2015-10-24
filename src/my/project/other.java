@@ -13,4 +13,9 @@ public class other {
     public static int price;
     public static String item1;
     public static int price1;
+    public static String item2;
+    public static int price2;
+    public static String item3;
+    public static int price3;
+
 }
