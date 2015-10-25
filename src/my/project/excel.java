@@ -13,7 +13,6 @@ import  java.sql.*;
 import  org.apache.poi.hssf.usermodel.HSSFSheet;  
 import  org.apache.poi.hssf.usermodel.HSSFWorkbook; 
 import  org.apache.poi.hssf.usermodel.HSSFRow;
-import  org.apache.poi.hssf.usermodel.HSSFCell;
 
 public class excel extends javax.swing.JFrame {
 
@@ -256,28 +255,28 @@ HSSFWorkbook hwb=new HSSFWorkbook();
 HSSFSheet sheet =  hwb.createSheet("new sheet");
 
 HSSFRow rowhead=   sheet.createRow((short)0);
-rowhead.createCell((short) 0).setCellValue("SNo");
-rowhead.createCell((short) 1).setCellValue("Roll");
-rowhead.createCell((short) 2).setCellValue("Name");
-rowhead.createCell((short) 3).setCellValue("Basic");
-rowhead.createCell((short) 4).setCellValue("Extra");
-rowhead.createCell((short) 5).setCellValue("Dues");
-rowhead.createCell((short) 6).setCellValue("Advance");
-rowhead.createCell((short) 7).setCellValue("Total");
+rowhead.createCell(0).setCellValue("SNo");
+rowhead.createCell(1).setCellValue("Roll");
+rowhead.createCell(2).setCellValue("Name");
+rowhead.createCell(3).setCellValue("Basic");
+rowhead.createCell(4).setCellValue("Extra");
+rowhead.createCell(5).setCellValue("Dues");
+rowhead.createCell(6).setCellValue("Advance");
+rowhead.createCell(7).setCellValue("Total");
 Statement stmt =con.createStatement();
 String query = "Select * from dues;";
 ResultSet rs = stmt.executeQuery(query);
 int i=1;
 while(rs.next()){
 HSSFRow row=   sheet.createRow((short)i);
-row.createCell((short) 0).setCellValue(rs.getString("s_no"));
-row.createCell((short) 1).setCellValue(rs.getString("roll"));
-row.createCell((short) 2).setCellValue(rs.getString("name"));
-row.createCell((short) 3).setCellValue(basic);
-row.createCell((short) 4).setCellValue(rs.getString("extra"));
-row.createCell((short) 5).setCellValue(rs.getString("dues"));
-row.createCell((short) 6).setCellValue(rs.getString("advance"));
-row.createCell((short) 7).setCellValue(rs.getString("total"));
+row.createCell(0).setCellValue(rs.getString("s_no"));
+row.createCell(1).setCellValue(rs.getString("roll"));
+row.createCell(2).setCellValue(rs.getString("name"));
+row.createCell(3).setCellValue(basic);
+row.createCell(4).setCellValue(rs.getString("extra"));
+row.createCell(5).setCellValue(rs.getString("dues"));
+row.createCell(6).setCellValue(rs.getString("advance"));
+row.createCell(7).setCellValue(rs.getString("total"));
 i++;
 int result=((50*j)/max)+50;
 lbl1.setText(""+result + " % completed ...");
@@ -305,24 +304,24 @@ while(rs10.next())
    +d1+"' && date<='"+d2+" 23:59:59';";
    ResultSet rs11 = stmt11.executeQuery(query11);
    
-   String filestudent="e:/student/"+roll+".xls" ;
+   String filestudent="/home/devashish/student/"+roll+".xls" ;
    HSSFWorkbook studentwb=new HSSFWorkbook();
    HSSFSheet studentsheet =  studentwb.createSheet("new sheet");
    
     HSSFRow studentrowhead=   studentsheet.createRow((short)0);
-    studentrowhead.createCell((short) 0).setCellValue("SNo");
-    studentrowhead.createCell((short) 1).setCellValue("Extra");
-    studentrowhead.createCell((short) 2).setCellValue("Date and Time");
-    studentrowhead.createCell((short) 3).setCellValue("Price");
-    studentrowhead.createCell((short) 4).setCellValue("Number");
+    studentrowhead.createCell(0).setCellValue("SNo");
+    studentrowhead.createCell(1).setCellValue("Extra");
+    studentrowhead.createCell(2).setCellValue("Date and Time");
+    studentrowhead.createCell(3).setCellValue("Price");
+    studentrowhead.createCell(4).setCellValue("Number");
    int t=1;
    while(rs11.next()){
        HSSFRow studentrow =   studentsheet.createRow((short)t);
-       studentrow.createCell((short) 0).setCellValue(rs11.getString("s_no"));
-       studentrow.createCell((short) 1).setCellValue(rs11.getString("extra"));
-       studentrow.createCell((short) 2).setCellValue(rs11.getString("date"));
-       studentrow.createCell((short) 3).setCellValue(rs11.getString("price"));
-       studentrow.createCell((short) 4).setCellValue(rs11.getString("number"));
+       studentrow.createCell(0).setCellValue(rs11.getString("s_no"));
+       studentrow.createCell(1).setCellValue(rs11.getString("extra"));
+       studentrow.createCell(2).setCellValue(rs11.getString("date"));
+       studentrow.createCell(3).setCellValue(rs11.getString("price"));
+       studentrow.createCell(4).setCellValue(rs11.getString("number"));
        t++;
    }
    FileOutputStream studentfileOut =  new FileOutputStream(filestudent);
