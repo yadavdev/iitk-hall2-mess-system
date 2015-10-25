@@ -304,7 +304,7 @@ while(rs10.next())
    +d1+"' && date<='"+d2+" 23:59:59';";
    ResultSet rs11 = stmt11.executeQuery(query11);
    
-   String filestudent="/home/devashish/student/"+roll+".xls" ;
+   String filestudent="e:/student/"+roll+".xls" ;
    HSSFWorkbook studentwb=new HSSFWorkbook();
    HSSFSheet studentsheet =  studentwb.createSheet("new sheet");
    
