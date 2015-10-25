@@ -493,7 +493,7 @@ txt2.setText("");          // TODO add your handling code here:
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        this.dispose();
-            roll1 second = new roll1(); 
+            roll3 second = new roll3(); 
             second.setVisible(true);  // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

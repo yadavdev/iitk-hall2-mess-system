@@ -32,6 +32,7 @@ public class extraoption extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         bt4 = new javax.swing.JButton();
         bt5 = new javax.swing.JButton();
+        bt6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Extra Options");
@@ -41,7 +42,7 @@ public class extraoption extends javax.swing.JFrame {
         bt2.setBackground(new java.awt.Color(204, 204, 204));
         bt2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         bt2.setForeground(new java.awt.Color(0, 51, 51));
-        bt2.setText("One Extra");
+        bt2.setText("No Extra");
         bt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt2ActionPerformed(evt);
@@ -89,6 +90,16 @@ public class extraoption extends javax.swing.JFrame {
             }
         });
 
+        bt6.setBackground(new java.awt.Color(204, 204, 204));
+        bt6.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        bt6.setForeground(new java.awt.Color(0, 51, 51));
+        bt6.setText("One Extra");
+        bt6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,7 +120,8 @@ public class extraoption extends javax.swing.JFrame {
                                     .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -118,13 +130,15 @@ public class extraoption extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5))
@@ -136,7 +150,7 @@ public class extraoption extends javax.swing.JFrame {
     private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
         menud.menu="extra";
         this.dispose();
-        menu second = new menu();
+        roll0 second = new roll0();
         second.setVisible(true);
 
         // TODO add your handling code here:
@@ -169,6 +183,13 @@ public class extraoption extends javax.swing.JFrame {
         menu4 second = new menu4();
         second.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_bt5ActionPerformed
+
+    private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt6ActionPerformed
+        menud.menu="extra";
+        this.dispose();
+        menu second = new menu();
+        second.setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_bt6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +230,7 @@ public class extraoption extends javax.swing.JFrame {
     private javax.swing.JButton bt3;
     private javax.swing.JButton bt4;
     private javax.swing.JButton bt5;
+    private javax.swing.JButton bt6;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables

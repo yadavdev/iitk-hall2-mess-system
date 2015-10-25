@@ -10,17 +10,16 @@ package my.project;
  */
 
 import java.sql.*;
-public class student extends javax.swing.JFrame {
+public class student0 extends javax.swing.JFrame {
 
     /**
      * Creates new form student
      */
-    public student() {
+    public student0() {
         initComponents();
    lbl2.setText(detail.name);
    lbl3.setText(detail.roll);
    lbl1.setIcon(new javax.swing.ImageIcon("c:/image/"+detail.roll+"_0.jpg"));
-   lbl4.setText(""+other.item);
     }
 
     /**
@@ -38,10 +37,8 @@ public class student extends javax.swing.JFrame {
         lbl3 = new javax.swing.JLabel();
         lbl1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        lbl4 = new javax.swing.JLabel();
         txt1 = new javax.swing.JTextField();
         lbl5 = new javax.swing.JLabel();
-        txt3 = new javax.swing.JTextField();
         txt4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -84,8 +81,6 @@ public class student extends javax.swing.JFrame {
             }
         });
 
-        lbl4.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
-
         txt1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         txt1.setText("0");
         txt1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -95,14 +90,6 @@ public class student extends javax.swing.JFrame {
         });
 
         lbl5.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
-
-        txt3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        txt3.setText("0");
-        txt3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txt3MouseClicked(evt);
-            }
-        });
 
         txt4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         txt4.setText("0");
@@ -234,15 +221,8 @@ public class student extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel10))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(237, 237, 237)
-                                .addComponent(lbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(jLabel10)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -294,11 +274,7 @@ public class student extends javax.swing.JFrame {
                         .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt3, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addComponent(lbl4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -315,7 +291,6 @@ public class student extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 try{
-int number = Integer.parseInt(txt3.getText());
 int mmilk = Integer.parseInt(txt4.getText());
 int nmilk = Integer.parseInt(txt1.getText());
 int egg = Integer.parseInt(txt5.getText());
@@ -330,9 +305,6 @@ try {
             String table_name = "s"+detail.roll;
             String table = "create table "+table_name+"(s_no int primary key auto_increment,extra varchar(50),date timestamp,price int,number int);";
             stmt.executeUpdate(table);
-            if(number!=0){
-            String excmd = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('" + other.item + "','" + number + "','"+ other.price*number  +"')";
-            stmt.executeUpdate(excmd);}
             if(mmilk!=0){
             String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Morning milk  ','" + mmilk + "','"+ price.mmilk*mmilk  +"')";
             stmt.executeUpdate(excmd2);}
@@ -350,7 +322,7 @@ try {
             stmt.executeUpdate(excmd6);}
             
             this.dispose();
-            roll second = new roll(); 
+            roll0 second = new roll0(); 
             second.setVisible(true);
            }
 
@@ -361,9 +333,6 @@ try {
             Statement stmt =con.createStatement();
             Statement stmt1 =con.createStatement();
             String table_name = "s"+detail.roll;
-            if(number!=0){
-            String excmd = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('" + other.item + "','" + number + "','"+ other.price*number  +"')";
-            stmt.executeUpdate(excmd);}
             if(mmilk!=0){
             String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Morning milk  ','" + mmilk + "','"+ price.mmilk*mmilk  +"')";
             stmt.executeUpdate(excmd2);}
@@ -380,7 +349,7 @@ try {
             String excmd6 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('ButterORveg','" + butter + "','"+ price.butter*butter +"')";
             stmt.executeUpdate(excmd6);}
             this.dispose();
-            roll second = new roll(); 
+            roll0 second = new roll0(); 
             second.setVisible(true);
             lbl5.setText("Error in database connectivity");
             }
@@ -400,10 +369,6 @@ catch (Exception e)
      txt1.setText("");     // TODO add your handling code here:
     }//GEN-LAST:event_txt1MouseClicked
 
-    private void txt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt3MouseClicked
-      txt3.setText("");    // TODO add your handling code here:
-    }//GEN-LAST:event_txt3MouseClicked
-
     private void txt4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt4MouseClicked
         txt4.setText("");  // TODO add your handling code here:
     }//GEN-LAST:event_txt4MouseClicked
@@ -418,7 +383,7 @@ catch (Exception e)
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        this.dispose();
-            roll1 second = new roll1(); 
+            roll0 second = new roll0(); 
             second.setVisible(true);  // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -455,20 +420,21 @@ catch (Exception e)
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(student0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(student0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(student0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(student0.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new student().setVisible(true);
+                new student0().setVisible(true);
             }
         });
     }
@@ -488,10 +454,8 @@ catch (Exception e)
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;
-    private javax.swing.JLabel lbl4;
     private javax.swing.JLabel lbl5;
     private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt3;
     private javax.swing.JTextField txt4;
     private javax.swing.JTextField txt5;
     private javax.swing.JTextField txt6;
