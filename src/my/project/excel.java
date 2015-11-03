@@ -292,7 +292,7 @@ String query7 ="update dues set dues=0,advance=0,total=0;";
    // Generating students excel sheet...
    
 Statement stmt10 =con.createStatement();
-String query10 = "Select * from student;";
+String query10 = "Select * from dues;";
 ResultSet rs10 = stmt10.executeQuery(query10);
 while(rs10.next())
 {  String roll = rs10.getString("roll");
