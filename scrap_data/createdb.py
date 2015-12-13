@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import MySQLdb
-
+import sys
 # Opening databse connection
 # Preparing cursor object 
 try:
@@ -13,10 +13,27 @@ except MySQLdb.Error, e:
 
 
 # Adding students to database
-
 y13 = open("y13.txt")
 y14 = open("y14.txt")
 y15 = open("y15.txt")
+
+
+
+print "This script will create tables in the database named test.\nAll previous data using application login information (the login table) will be overwritten"
+print "If upgdating database make sure to take a backup first. Run \" mysqldump -uroot -ptiger test > backup_orig.sql\" "
+print "Note: Change the username and password for mysql as and when required"
+print "Make sure you have the backup .sql. Want to continue?"
+while 1:
+	call = raw_input("Press y or n:")
+	if call=='y':
+		sure = raw_input("Dude you really sure? y or n:")
+		if sure=='y':
+			break;
+		else:
+			sys.exit(0)
+	elif call=='n':
+		sys.exit(0)
+
 
 cursor.execute("DROP TABLE IF EXISTS dues")
 
@@ -36,12 +53,13 @@ cursor.execute("DROP TABLE IF EXISTS login")
 #the application searches the provided credentials against those in this table
 
 createtable = """CREATE TABLE login (
-				login VARCHAR(30),
+				id VARCHAR(30),
 				password VARCHAR(30)
 				)"""
 
 cursor.execute(createtable)
 
+print "Created new login table. Use mysql to insert login credentials using \"INSERT into LOGIN (id,password) values (\"myuser\",\"mypassword\") \""
 
 for i in range(190):
 	data = y13.readline()
