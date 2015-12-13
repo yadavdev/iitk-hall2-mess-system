@@ -303,7 +303,7 @@ try {
             "root","tiger");
             Statement stmt =con.createStatement();
             String table_name = "s"+detail.roll;
-            String table = "create table "+table_name+"(s_no int primary key auto_increment,extra varchar(50),date timestamp,price int,number int);";
+            String table = "create table "+table_name+"(s_no INT(6) not null auto_increment primary key,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP , extra varchar(50),price int(6),number int(6));";
             stmt.executeUpdate(table);
             if(mmilk!=0){
             String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Morning milk  ','" + mmilk + "','"+ price.mmilk*mmilk  +"')";
@@ -351,7 +351,7 @@ try {
             this.dispose();
             roll0 second = new roll0(); 
             second.setVisible(true);
-            lbl5.setText("Error in database connectivity");
+            lbl5.setText("Error in database connectivity:2");
             }
     }
   
