@@ -30,4 +30,4 @@ Do following before watching it in action  ....
 
 Good Luck :)
 
-In case of any query contact:  [Devashish Kumar Yadav ](http://www.facebook.com/devashish.kumar.yadav)
+In case of any query contact:  [Devashish Kumar Yadav ](www.facebook.com/devashish.kumar.yadav)
