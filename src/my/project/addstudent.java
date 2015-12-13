@@ -174,7 +174,7 @@ public class addstudent extends javax.swing.JFrame {
                     "root","tiger");
                 Statement stmt =con.createStatement();
                 String table_name = "s"+rollno;
-                String table = "create table "+table_name+"(s_no int primary key auto_increment,extra varchar(50),date timestamp,price int,number int);";
+                String table = "create table "+table_name+"(s_no INT(6) not null auto_increment primary key,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP , extra varchar(50),price int(6),number int(6));";
                 stmt.executeUpdate(table);
                 String excmd = "INSERT INTO dues (name,roll) VALUES ('" + name + "','"+ rollno +"')";
                 stmt.executeUpdate(excmd);
