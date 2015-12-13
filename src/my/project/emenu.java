@@ -110,7 +110,7 @@ public class emenu extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(105, 105, 105)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159))
@@ -156,7 +156,7 @@ public class emenu extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
                 "root","tiger");
             Statement stmt =con.createStatement();
-            String query = "Select * from student where roll="+s+";";
+            String query = "Select * from dues where roll="+s+";";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {  detail.name = rs.getString("name");
