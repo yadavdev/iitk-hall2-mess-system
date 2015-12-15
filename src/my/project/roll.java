@@ -196,7 +196,7 @@ try{
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
         "root","tiger");
 Statement stmt =con.createStatement();
-String query = "Select * from student where roll="+s+";";
+String query = "Select * from dues where roll="+s+";";
 ResultSet rs = stmt.executeQuery(query);
 while(rs.next())
 {  detail.name = rs.getString("name");
