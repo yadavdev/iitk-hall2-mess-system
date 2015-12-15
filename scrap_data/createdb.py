@@ -66,6 +66,7 @@ cursor.execute("DROP TABLE IF EXISTS eggs")
 createtable = """CREATE TABLE eggs (
 				s_no INT(6)  not null auto_increment primary key,
 				roll VARCHAR(30),
+				date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 				quantity INT(6),
 				amount INT(6)
 				)"""
