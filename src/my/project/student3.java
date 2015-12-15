@@ -403,7 +403,10 @@ try {
             stmt.executeUpdate(excmd3);}
             if(egg!=0){
             String excmd4 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Egg','" + egg + "','"+ price.egg*egg  +"')";
-            stmt.executeUpdate(excmd4);}
+            stmt.executeUpdate(excmd4);
+            String excmd41 = "UPDATE eggs set quantity = quantity +"+egg+",amount = amount +"+price.egg*egg+" WHERE date = CURDATE()";
+            stmt.executeUpdate(excmd41);
+            }
             if(paneerbhurzi!=0){
             String excmd5 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Paneerbhurzi','" + paneerbhurzi + "','"+ price.paneerbhurzi*paneerbhurzi  +"')";
             stmt.executeUpdate(excmd5);}
@@ -443,7 +446,10 @@ try {
             stmt.executeUpdate(excmd3);}
             if(egg!=0){
             String excmd4 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Egg','" + egg + "','"+ price.egg*egg  +"')";
-            stmt.executeUpdate(excmd4);}
+            stmt.executeUpdate(excmd4);
+            String excmd41 = "UPDATE eggs set quantity = quantity +"+egg+",amount = amount +"+price.egg*egg+" WHERE date = CURDATE()";
+            stmt.executeUpdate(excmd41);
+            }
             if(paneerbhurzi!=0){
             String excmd5 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Paneerbhurzi','" + paneerbhurzi + "','"+ price.paneerbhurzi*paneerbhurzi  +"')";
             stmt.executeUpdate(excmd5);}
