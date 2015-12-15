@@ -64,10 +64,10 @@ cursor.execute("DROP TABLE IF EXISTS eggs")
 #A table to maintain the total consumption of egg coupons in the mess
 
 createtable = """CREATE TABLE eggs (
-				s_no INT(6)  not null auto_increment primary key,\
-				date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-				quantity INT(6),
-				amount INT(6)
+				s_no INT(6)  not null auto_increment primary key,
+				date DATE not null unique ,
+				quantity INT(6) DEFAULT 0,
+				amount INT(6) DEFAULT 0
 				)"""
 
 cursor.execute(createtable)
