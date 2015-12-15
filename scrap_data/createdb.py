@@ -59,6 +59,19 @@ createtable = """CREATE TABLE login (
 
 cursor.execute(createtable)
 
+cursor.execute("DROP TABLE IF EXISTS eggs")
+
+#A table to maintain the total consumption of egg coupons in the mess
+
+createtable = """CREATE TABLE eggs (
+				s_no INT(6)  not null auto_increment primary key,
+				roll VARCHAR(30),
+				quantity INT(6),
+				amount INT(6)
+				)"""
+
+cursor.execute(createtable)
+
 print "Created new login table. Use mysql to insert login credentials using \"INSERT into LOGIN (id,password) values (\"myuser\",\"mypassword\") \""
 
 for i in range(190):
