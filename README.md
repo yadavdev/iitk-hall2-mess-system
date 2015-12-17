@@ -32,4 +32,6 @@ Do following before watching it in action  ....
 
 Good Luck :)
 
+Developed By: Hall-2: Robbin Sharma, Proneet Verma, Devashish Kumar Yadav
+
 In case of any query contact:  [Devashish Kumar Yadav](https://www.facebook.com/devashish.kumar.yadav)
