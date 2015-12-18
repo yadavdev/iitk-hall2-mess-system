@@ -195,6 +195,7 @@ public class excel extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         btn1.setEnabled(false);
+        jButton2.setEnabled(false);
         jProgressBar1.setStringPainted(true);
         Thread generationthread = new Thread(){
 
@@ -393,13 +394,14 @@ public class excel extends javax.swing.JFrame {
                 }
 
                 lbl1.setText("Your excel file has been generated!");
-                btn1.setVisible(false);
+                btn1.setEnabled(true);
 
                 } 
                 catch ( Exception e ) {
 
                     lbl1.setText("Error in file generation or database connectivity");
-
+                    btn1.setEnabled(true);  
+                    jButton2.setEnabled(true);
                 }
                 break;
                 }
