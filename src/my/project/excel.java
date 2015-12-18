@@ -10,6 +10,7 @@ package my.project;
  */
 import  java.io.*;  
 import  java.sql.*;
+import javax.swing.SwingUtilities;
 import  org.apache.poi.hssf.usermodel.HSSFSheet;  
 import  org.apache.poi.hssf.usermodel.HSSFWorkbook; 
 import  org.apache.poi.hssf.usermodel.HSSFRow;
@@ -44,6 +45,7 @@ public class excel extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Excel Sheet");
@@ -131,6 +133,17 @@ public class excel extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(185, 185, 185))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -144,16 +157,7 @@ public class excel extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(192, 192, 192)
                         .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(211, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(185, 185, 185))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +168,9 @@ public class excel extends javax.swing.JFrame {
                     .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
+                .addGap(83, 83, 83)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -188,205 +194,219 @@ public class excel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        btn1.setEnabled(false);
+        jProgressBar1.setStringPainted(true);
+        Thread generationthread = new Thread(){
 
-while(1>0){        
-String d1=txt2.getText();
-String d2=txt3.getText();
-int basic=0;
-try{
-basic=Integer.parseInt(txt1.getText());  
-}
-catch(Exception e){
-    
-lbl1.setText("Enter valid numbers in basic(only integer allowed");
-break;
-}
-try{
-Class.forName("java.sql.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-        "root","tiger");
-int max=1;
-Statement stmt8 =con.createStatement();
-String query8 = "Select max(s_no) as max from dues;";
-ResultSet rs8 = stmt8.executeQuery(query8);
-while(rs8.next())
-{ 
-max = Integer.parseInt(rs8.getString("max"));
-}
+            @Override
+            public void run(){
+                while(1>0){        
+                String d1=txt2.getText();
+                String d2=txt3.getText();
+                int basic=0;
+                try{
+                basic=Integer.parseInt(txt1.getText());  
+                }
+                catch(Exception e){
 
-Statement stmt2 =con.createStatement();
-String query2 = "Select * from dues;";
-ResultSet rs2 = stmt2.executeQuery(query2);
-int j=1;
-while(rs2.next())
-{  String roll = rs2.getString("roll");
-   int advance = Integer.parseInt(rs2.getString("advance"));
-   Statement stmt3 =con.createStatement();
-   String table_name="s"+roll;
-   String query3 = "Select sum(price) as 'price' from "+
-   table_name+" where date>='"
-   +d1+"' && date<='"+d2+" 23:59:59';";
-   ResultSet rs3 = stmt3.executeQuery(query3);
-   while(rs3.next()){
-     int price;
-   
-  try{
-   price = Integer.parseInt(rs3.getString("price"));
-  }
-  catch (Exception e){
-      price=0;
-  }
-   int dues = price+basic;
-   
-   Statement stmt4 =con.createStatement();
-   String query4 ="update dues set dues=dues+"+dues+" where roll='"
-           +roll+"';";
-   stmt4.executeUpdate(query4);
-   Statement stmt5 =con.createStatement();
-   String query5 ="update dues set extra="+price+" where roll='"
-           +roll+"';";
-   stmt5.executeUpdate(query5);
-   int total=dues-advance;
-   Statement stmt6 =con.createStatement();
-   String query6 ="update dues set total="+total+" where roll='"
-           +roll+"';";
-   stmt6.executeUpdate(query6);
-   }
-  int result=(50*j)/max;
-  lbl1.setText(""+result + " % completed ...");
-  j++;
-}
-j=1;
+                lbl1.setText("Enter valid numbers in basic(only integer allowed");
+                break;
+                }
+                try{
+                Class.forName("java.sql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
+                        "root","tiger");
+                int max=1;
+                Statement stmt8 =con.createStatement();
+                String query8 = "Select max(s_no) as max from dues;";
+                ResultSet rs8 = stmt8.executeQuery(query8);
+                while(rs8.next())
+                { 
+                max = Integer.parseInt(rs8.getString("max"));
+                }
+                lbl1.setText("Generating data for dues.");
+                jProgressBar1.setValue(0);
+                Statement stmt2 =con.createStatement();
+                String query2 = "Select * from dues;";
+                ResultSet rs2 = stmt2.executeQuery(query2);
+                int j=1;
+                while(rs2.next())
+                {  String roll = rs2.getString("roll");
+                   int advance = Integer.parseInt(rs2.getString("advance"));
+                   Statement stmt3 =con.createStatement();
+                   String table_name="s"+roll;
+                   String query3 = "Select sum(price) as 'price' from "+
+                   table_name+" where date>='"
+                   +d1+"' && date<='"+d2+" 23:59:59';";
+                   ResultSet rs3 = stmt3.executeQuery(query3);
+                   while(rs3.next()){
+                     int price;
 
-String filename="e:/dues.xls" ;
-HSSFWorkbook hwb=new HSSFWorkbook();
-HSSFSheet sheet =  hwb.createSheet("new sheet");
+                  try{
+                   price = Integer.parseInt(rs3.getString("price"));
+                  }
+                  catch (Exception e){
+                      price=0;
+                  }
+                   int dues = price+basic;
 
-HSSFRow rowhead=   sheet.createRow((short)0);
-rowhead.createCell(0).setCellValue("SNo");
-rowhead.createCell(1).setCellValue("Roll");
-rowhead.createCell(2).setCellValue("Name");
-rowhead.createCell(3).setCellValue("Basic");
-rowhead.createCell(4).setCellValue("Extra");
-rowhead.createCell(5).setCellValue("Dues");
-rowhead.createCell(6).setCellValue("Advance");
-rowhead.createCell(7).setCellValue("Total");
-Statement stmt =con.createStatement();
-String query = "Select * from dues;";
-ResultSet rs = stmt.executeQuery(query);
-int i=1;
-while(rs.next()){
-HSSFRow row=   sheet.createRow((short)i);
-row.createCell(0).setCellValue(rs.getString("s_no"));
-row.createCell(1).setCellValue(rs.getString("roll"));
-row.createCell(2).setCellValue(rs.getString("name"));
-row.createCell(3).setCellValue(basic);
-row.createCell(4).setCellValue(rs.getString("extra"));
-row.createCell(5).setCellValue(rs.getString("dues"));
-row.createCell(6).setCellValue(rs.getString("advance"));
-row.createCell(7).setCellValue(rs.getString("total"));
-i++;
-int result=((50*j)/max)+50;
-lbl1.setText(""+result + " % completed ...");
-  j++;
-}
-FileOutputStream fileOut =  new FileOutputStream(filename);
-hwb.write(fileOut);
-fileOut.close();
-Statement stmt7 =con.createStatement();
-String query7 ="update dues set dues=0,advance=0,total=0;";
-   stmt7.executeUpdate(query7);
+                   Statement stmt4 =con.createStatement();
+                   String query4 ="update dues set dues=dues+"+dues+" where roll='"
+                           +roll+"';";
+                   stmt4.executeUpdate(query4);
+                   Statement stmt5 =con.createStatement();
+                   String query5 ="update dues set extra="+price+" where roll='"
+                           +roll+"';";
+                   stmt5.executeUpdate(query5);
+                   int total=dues-advance;
+                   Statement stmt6 =con.createStatement();
+                   String query6 ="update dues set total="+total+" where roll='"
+                           +roll+"';";
+                   stmt6.executeUpdate(query6);
+                   }
+                  int result=(100*j)/max;
+                  //lbl1.setText(""+result + " % completed ...");
+                  jProgressBar1.setValue(result);
+                  j++;
+                }
+                j=1;
+                lbl1.setText("Creating file dues.xls");
+                jProgressBar1.setValue(0);
+                String filename="dues.xls" ;
+                HSSFWorkbook hwb=new HSSFWorkbook();
+                HSSFSheet sheet =  hwb.createSheet("new sheet");
 
-   //Generating egg consumption sheet.
-j=1;
+                HSSFRow rowhead=   sheet.createRow((short)0);
+                rowhead.createCell(0).setCellValue("SNo");
+                rowhead.createCell(1).setCellValue("Roll");
+                rowhead.createCell(2).setCellValue("Name");
+                rowhead.createCell(3).setCellValue("Basic");
+                rowhead.createCell(4).setCellValue("Extra");
+                rowhead.createCell(5).setCellValue("Dues");
+                rowhead.createCell(6).setCellValue("Advance");
+                rowhead.createCell(7).setCellValue("Total");
+                Statement stmt =con.createStatement();
+                String query = "Select * from dues;";
+                ResultSet rs = stmt.executeQuery(query);
+                int i=1;
+                while(rs.next()){
+                HSSFRow row=   sheet.createRow((short)i);
+                row.createCell(0).setCellValue(rs.getString("s_no"));
+                row.createCell(1).setCellValue(rs.getString("roll"));
+                row.createCell(2).setCellValue(rs.getString("name"));
+                row.createCell(3).setCellValue(basic);
+                row.createCell(4).setCellValue(rs.getString("extra"));
+                row.createCell(5).setCellValue(rs.getString("dues"));
+                row.createCell(6).setCellValue(rs.getString("advance"));
+                row.createCell(7).setCellValue(rs.getString("total"));
+                i++;
+                int result=((100*j)/max);
+                jProgressBar1.setValue(result);
+                  j++;
+                }
+                FileOutputStream fileOut =  new FileOutputStream(filename);
+                hwb.write(fileOut);
+                fileOut.close();
+                Statement stmt7 =con.createStatement();
+                String query7 ="update dues set dues=0,advance=0,total=0;";
+                   stmt7.executeUpdate(query7);
+
+                   //Generating egg consumption sheet.
+                j=1;
+
+                lbl1.setText("Creating egg.xls");
+                jProgressBar1.setValue(0);
+                filename="eggs.xls" ;
+                HSSFWorkbook egghwb = new HSSFWorkbook();
+                HSSFSheet eggsheet =  egghwb.createSheet("new sheet");
+
+                HSSFRow eggrowhead =   eggsheet.createRow((short)0);
+                eggrowhead =  eggsheet.createRow((short)0);
+                eggrowhead.createCell(0).setCellValue("SNo");
+                eggrowhead.createCell(1).setCellValue("Date");
+                eggrowhead.createCell(2).setCellValue("Quantity");
+                eggrowhead.createCell(3).setCellValue("Amount");
+                Statement stmt1 =con.createStatement();
+                String query1 = "Select * from eggs where date>='"+d1+"' && date<='"+d2+"';";
+                ResultSet rs1 = stmt1.executeQuery(query1);
+                i=1;
+                while(rs1.next()){
+                HSSFRow row=   eggsheet.createRow((short)i);
+                row.createCell(0).setCellValue(rs1.getString("s_no"));
+                row.createCell(1).setCellValue(rs1.getString("date"));
+                row.createCell(2).setCellValue(rs1.getString("quantity"));
+                row.createCell(3).setCellValue(rs1.getString("amount"));
+                i++;
+                int result=((100*j)/max);
+                jProgressBar1.setValue(result);
+                j++;
+                }
+                FileOutputStream fileOut1 =  new FileOutputStream(filename);
+                egghwb.write(fileOut1);
+                fileOut1.close(); 
+
+                // Generating students excel sheet...
+                lbl1.setText("Generating individual student data.");
+                jProgressBar1.setValue(0);
+                j=1;
+                Statement stmt10 =con.createStatement();
+                String query10 = "Select * from dues;";
+                ResultSet rs10 = stmt10.executeQuery(query10);
+                while(rs10.next())
+                {  String roll = rs10.getString("roll");
+
+                   Statement stmt11 =con.createStatement();
+                   String table_name="s"+roll;
+                   String query11 = "Select * from "+
+                   table_name+" where date>='"
+                   +d1+"' && date<='"+d2+" 23:59:59';";
+                   ResultSet rs11 = stmt11.executeQuery(query11);
+
+                   String filestudent=roll+".xls" ;
+                   HSSFWorkbook studentwb=new HSSFWorkbook();
+                   HSSFSheet studentsheet =  studentwb.createSheet("new sheet");
+
+                    HSSFRow studentrowhead=   studentsheet.createRow((short)0);
+                    studentrowhead.createCell(0).setCellValue("SNo");
+                    studentrowhead.createCell(1).setCellValue("Extra");
+                    studentrowhead.createCell(2).setCellValue("Date and Time");
+                    studentrowhead.createCell(3).setCellValue("Price");
+                    studentrowhead.createCell(4).setCellValue("Number");
+                   int t=1;
+                   while(rs11.next()){
+                       HSSFRow studentrow =   studentsheet.createRow((short)t);
+                       studentrow.createCell(0).setCellValue(rs11.getString("s_no"));
+                       studentrow.createCell(1).setCellValue(rs11.getString("extra"));
+                       studentrow.createCell(2).setCellValue(rs11.getString("date"));
+                       studentrow.createCell(3).setCellValue(rs11.getString("price"));
+                       studentrow.createCell(4).setCellValue(rs11.getString("number"));
+                       t++;
+                   }
+                   FileOutputStream studentfileOut =  new FileOutputStream(filestudent);
+                   studentwb.write(studentfileOut);
+                   studentfileOut.close();
+                   int result=((100*j)/max);
+                   jProgressBar1.setValue(result);
+                   j++;
 
 
-filename="e:/eggs.xls" ;
-HSSFWorkbook egghwb = new HSSFWorkbook();
-HSSFSheet eggsheet =  egghwb.createSheet("new sheet");
+                }
 
-HSSFRow eggrowhead =   eggsheet.createRow((short)0);
-eggrowhead =  eggsheet.createRow((short)0);
-eggrowhead.createCell(0).setCellValue("SNo");
-eggrowhead.createCell(1).setCellValue("Date");
-eggrowhead.createCell(2).setCellValue("Quantity");
-eggrowhead.createCell(3).setCellValue("Amount");
-Statement stmt1 =con.createStatement();
-String query1 = "Select * from eggs where date>='"+d1+"' && date<='"+d2+"';";
-ResultSet rs1 = stmt1.executeQuery(query1);
-i=1;
-while(rs1.next()){
-HSSFRow row=   eggsheet.createRow((short)i);
-row.createCell(0).setCellValue(rs1.getString("s_no"));
-row.createCell(1).setCellValue(rs1.getString("date"));
-row.createCell(2).setCellValue(rs1.getString("quantity"));
-row.createCell(3).setCellValue(rs1.getString("amount"));
-i++;
-int result=((50*j)/max)+50;
-lbl1.setText(""+result + " % completed ...");
-  j++;
-}
-FileOutputStream fileOut1 =  new FileOutputStream(filename);
-egghwb.write(fileOut1);
-fileOut1.close(); 
-   
-// Generating students excel sheet...
-   
-Statement stmt10 =con.createStatement();
-String query10 = "Select * from dues;";
-ResultSet rs10 = stmt10.executeQuery(query10);
-while(rs10.next())
-{  String roll = rs10.getString("roll");
-   
-   Statement stmt11 =con.createStatement();
-   String table_name="s"+roll;
-   String query11 = "Select * from "+
-   table_name+" where date>='"
-   +d1+"' && date<='"+d2+" 23:59:59';";
-   ResultSet rs11 = stmt11.executeQuery(query11);
-   
-   String filestudent="e:/student/"+roll+".xls" ;
-   HSSFWorkbook studentwb=new HSSFWorkbook();
-   HSSFSheet studentsheet =  studentwb.createSheet("new sheet");
-   
-    HSSFRow studentrowhead=   studentsheet.createRow((short)0);
-    studentrowhead.createCell(0).setCellValue("SNo");
-    studentrowhead.createCell(1).setCellValue("Extra");
-    studentrowhead.createCell(2).setCellValue("Date and Time");
-    studentrowhead.createCell(3).setCellValue("Price");
-    studentrowhead.createCell(4).setCellValue("Number");
-   int t=1;
-   while(rs11.next()){
-       HSSFRow studentrow =   studentsheet.createRow((short)t);
-       studentrow.createCell(0).setCellValue(rs11.getString("s_no"));
-       studentrow.createCell(1).setCellValue(rs11.getString("extra"));
-       studentrow.createCell(2).setCellValue(rs11.getString("date"));
-       studentrow.createCell(3).setCellValue(rs11.getString("price"));
-       studentrow.createCell(4).setCellValue(rs11.getString("number"));
-       t++;
-   }
-   FileOutputStream studentfileOut =  new FileOutputStream(filestudent);
-   studentwb.write(studentfileOut);
-   studentfileOut.close();
-   
+                lbl1.setText("Your excel file has been generated!");
+                btn1.setVisible(false);
 
-}
-   
-lbl1.setText("Your excel file has been generated!");
-btn1.setVisible(false);
+                } 
+                catch ( Exception e ) {
 
-} 
-catch ( Exception e ) {
-    
-    lbl1.setText("Error in file generation or database connectivity");
+                    lbl1.setText("Error in file generation or database connectivity");
 
-}
-break;
-}
-        
-        
-        
-        // TODO add your handling code here:
+                }
+                break;
+                }
+            }
+        };
+    generationthread.start();
+// TODO add your handling code here:
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -443,6 +463,7 @@ break;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JTextField txt1;
     private javax.swing.JTextField txt2;
