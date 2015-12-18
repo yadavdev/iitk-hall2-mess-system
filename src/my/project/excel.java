@@ -300,36 +300,37 @@ String query7 ="update dues set dues=0,advance=0,total=0;";
    //Generating egg consumption sheet.
 j=1;
 
-filename="e:/eggs.xls" ;
-hwb=new HSSFWorkbook();
-hwb.createSheet("new sheet");
 
-rowhead=   sheet.createRow((short)0);
-rowhead.createCell(0).setCellValue("SNo");
-rowhead.createCell(1).setCellValue("Date");
-rowhead.createCell(2).setCellValue("Quantity");
-rowhead.createCell(3).setCellValue("Amount");
+filename="e:/eggs.xls" ;
+HSSFWorkbook egghwb = new HSSFWorkbook();
+HSSFSheet eggsheet =  egghwb.createSheet("new sheet");
+
+HSSFRow eggrowhead =   eggsheet.createRow((short)0);
+eggrowhead =  eggsheet.createRow((short)0);
+eggrowhead.createCell(0).setCellValue("SNo");
+eggrowhead.createCell(1).setCellValue("Date");
+eggrowhead.createCell(2).setCellValue("Quantity");
+eggrowhead.createCell(3).setCellValue("Amount");
 Statement stmt1 =con.createStatement();
 String query1 = "Select * from eggs where date>='"+d1+"' && date<='"+d2+"';";
 ResultSet rs1 = stmt1.executeQuery(query1);
 i=1;
 while(rs1.next()){
-HSSFRow row=   sheet.createRow((short)i);
-row.createCell(0).setCellValue(rs.getString("s_no"));
-row.createCell(1).setCellValue(rs.getString("date"));
-row.createCell(2).setCellValue(rs.getString("quantity"));
-row.createCell(3).setCellValue(rs.getString("amount"));
+HSSFRow row=   eggsheet.createRow((short)i);
+row.createCell(0).setCellValue(rs1.getString("s_no"));
+row.createCell(1).setCellValue(rs1.getString("date"));
+row.createCell(2).setCellValue(rs1.getString("quantity"));
+row.createCell(3).setCellValue(rs1.getString("amount"));
 i++;
 int result=((50*j)/max)+50;
 lbl1.setText(""+result + " % completed ...");
   j++;
 }
 FileOutputStream fileOut1 =  new FileOutputStream(filename);
-hwb.write(fileOut1);
-fileOut1.close();
+egghwb.write(fileOut1);
+fileOut1.close(); 
    
-   
-   // Generating students excel sheet...
+// Generating students excel sheet...
    
 Statement stmt10 =con.createStatement();
 String query10 = "Select * from dues;";
