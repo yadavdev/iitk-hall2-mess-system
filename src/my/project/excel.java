@@ -273,7 +273,7 @@ public class excel extends javax.swing.JFrame {
                 j=1;
                 lbl1.setText("Creating file dues.xls");
                 jProgressBar1.setValue(0);
-                String filename="dues.xls" ;
+                String filename="e:/dues.xls" ;
                 HSSFWorkbook hwb=new HSSFWorkbook();
                 HSSFSheet sheet =  hwb.createSheet("new sheet");
 
@@ -317,7 +317,7 @@ public class excel extends javax.swing.JFrame {
 
                 lbl1.setText("Creating egg.xls");
                 jProgressBar1.setValue(0);
-                filename="eggs.xls" ;
+                filename="e:/eggs.xls" ;
                 HSSFWorkbook egghwb = new HSSFWorkbook();
                 HSSFSheet eggsheet =  egghwb.createSheet("new sheet");
 
@@ -363,7 +363,7 @@ public class excel extends javax.swing.JFrame {
                    +d1+"' && date<='"+d2+" 23:59:59';";
                    ResultSet rs11 = stmt11.executeQuery(query11);
 
-                   String filestudent=roll+".xls" ;
+                   String filestudent="e:/student/"+roll+".xls" ;
                    HSSFWorkbook studentwb=new HSSFWorkbook();
                    HSSFSheet studentsheet =  studentwb.createSheet("new sheet");
 
@@ -395,7 +395,7 @@ public class excel extends javax.swing.JFrame {
 
                 lbl1.setText("Your excel file has been generated!");
                 btn1.setEnabled(true);
-
+                jButton2.setEnabled(true);
                 } 
                 catch ( Exception e ) {
 
