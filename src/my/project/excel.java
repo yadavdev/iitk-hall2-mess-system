@@ -216,7 +216,7 @@ public class excel extends javax.swing.JFrame {
                 try{
                 Class.forName("java.sql.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                        "root","tiger");
+                        "root","tigress");
                 int max=1;
                 Statement stmt8 =con.createStatement();
                 String query8 = "Select max(s_no) as max from dues;";

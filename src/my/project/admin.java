@@ -166,7 +166,7 @@ public class admin extends javax.swing.JFrame {
 
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                "root","tiger");
+                "root","tigress");
             Statement stmt =con.createStatement();
             String query = "Select * from login;";
             ResultSet rs = stmt.executeQuery(query);

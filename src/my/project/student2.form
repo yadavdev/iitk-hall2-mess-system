@@ -72,10 +72,10 @@
                           <Component id="jLabel5" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" linkSize="2" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel7" linkSize="2" alignment="0" pref="153" max="32767" attributes="0"/>
-                          <Component id="jLabel9" linkSize="2" min="-2" pref="199" max="-2" attributes="0"/>
                           <Component id="jLabel4" linkSize="2" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="jLabel9" min="-2" pref="225" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txt1" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
@@ -325,7 +325,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Evening Milk :(1= 9Rs)"/>
+        <Property name="text" type="java.lang.String" value="Egg :(1= 6Rs)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -336,7 +336,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Morning Milk :(1= 9 Rs)"/>
+        <Property name="text" type="java.lang.String" value="Shakes :(1= 12 Rs)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -347,7 +347,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Egg : (1 = 6 Rs)"/>
+        <Property name="text" type="java.lang.String" value="Veg : (1 = 4 Rs)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt5">
@@ -380,7 +380,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Butter/Veg :(1= 5 Rs)"/>
+        <Property name="text" type="java.lang.String" value="Ice Cream :(1= 16 Rs)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -406,7 +406,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Paneer Bhurzi : (1 = 15 Rs)"/>
+        <Property name="text" type="java.lang.String" value="Cold Coffee/Bournvitta : (1 = 10 Rs)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt7">

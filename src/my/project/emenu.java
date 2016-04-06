@@ -154,7 +154,7 @@ public class emenu extends javax.swing.JFrame {
 
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                "root","tiger");
+                "root","tigress");
             Statement stmt =con.createStatement();
             String query = "Select * from dues where roll="+s+";";
             ResultSet rs = stmt.executeQuery(query);

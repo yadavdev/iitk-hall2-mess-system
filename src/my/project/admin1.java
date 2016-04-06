@@ -172,7 +172,7 @@ try{
   lbl1.setText("");
 Class.forName("java.sql.Driver");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-        "root","tiger");
+        "root","tigress");
 Statement stmt =con.createStatement();
 Statement stmt1 =con.createStatement();
 String query = "Select * from dues;";

@@ -175,7 +175,7 @@ public class studentfee extends javax.swing.JFrame {
         try {
                 Class.forName("java.sql.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                    "root","tiger");
+                    "root","tigress");
                 Statement stmt =con.createStatement();
                 String excmd = "update dues set dues="+dues+
                  ",advance="+advance+" where roll="+detail.roll+";";

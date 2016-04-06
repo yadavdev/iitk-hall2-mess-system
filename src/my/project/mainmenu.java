@@ -18,7 +18,7 @@ public class mainmenu extends javax.swing.JFrame {
         try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-            "root","tiger");
+            "root","tigress");
             Statement stmt =con.createStatement();
             String query = "Select * from eggs where date(DATE) = CURDATE()";
             ResultSet rs = stmt.executeQuery(query);

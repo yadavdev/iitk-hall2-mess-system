@@ -171,7 +171,7 @@ public class addstudent extends javax.swing.JFrame {
             try {
                 Class.forName("java.sql.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                    "root","tiger");
+                    "root","tigress");
                 Statement stmt =con.createStatement();
                 String table_name = "s"+rollno;
                 String table = "create table "+table_name+"(s_no INT(6) not null auto_increment primary key,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP , extra varchar(50),price int(6),number int(6));";

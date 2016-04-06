@@ -137,15 +137,15 @@ public class student1 extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel4.setText("Evening Milk :(1= 9Rs)");
+        jLabel4.setText("Egg :(1= 6Rs)");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel5.setText("Morning Milk :(1= 9 Rs)");
+        jLabel5.setText("Shakes :(1= 12 Rs)");
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel6.setText("Egg : (1 = 6 Rs)");
+        jLabel6.setText("Veg : (1 = 4 Rs)");
 
         txt5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         txt5.setText("0");
@@ -165,7 +165,7 @@ public class student1 extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel7.setText("Butter/Veg :(1= 5 Rs)");
+        jLabel7.setText("Ice Cream :(1= 16 Rs)");
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +178,7 @@ public class student1 extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel9.setText("Paneer Bhurzi : (1 = 15 Rs)");
+        jLabel9.setText("Cold Coffee/Bournvitta : (1 = 10 Rs)");
 
         txt7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         txt7.setText("0");
@@ -212,9 +212,9 @@ public class student1 extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,7 +259,7 @@ public class student1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel4, jLabel5, jLabel6, jLabel7, jLabel9});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel4, jLabel5, jLabel6, jLabel7});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lbl4, lbl6});
 
@@ -291,11 +291,12 @@ public class student1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(40, 40, 40)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txt6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txt5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -316,7 +317,7 @@ public class student1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -335,16 +336,16 @@ public class student1 extends javax.swing.JFrame {
 try{
 int number = Integer.parseInt(txt3.getText());
 int number1 = Integer.parseInt(txt2.getText());
-int mmilk = Integer.parseInt(txt4.getText());
-int nmilk = Integer.parseInt(txt1.getText());
-int egg = Integer.parseInt(txt5.getText());
-int butter = Integer.parseInt(txt6.getText());
-int paneerbhurzi = Integer.parseInt(txt7.getText());
+int shakes = Integer.parseInt(txt4.getText());
+int egg = Integer.parseInt(txt1.getText());
+int veg = Integer.parseInt(txt5.getText());
+int icecream = Integer.parseInt(txt6.getText());
+int coldcoffee = Integer.parseInt(txt7.getText());
 try {
       try {
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-            "root","tiger");
+            "root","tigress");
             Statement stmt =con.createStatement();
             String table_name = "s"+detail.roll;
             String table = "create table "+table_name+"(s_no INT(6) not null auto_increment primary key,date TIMESTAMP DEFAULT CURRENT_TIMESTAMP , extra varchar(50),price int(6),number int(6));";
@@ -355,11 +356,11 @@ try {
             if(number1!=0){
             String excmd1 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('" + other.item1 + "','" + number1 + "','"+ other.price1*number1  +"')";
             stmt.executeUpdate(excmd1);}
-            if(mmilk!=0){
-            String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Morning milk  ','" + mmilk + "','"+ price.mmilk*mmilk  +"')";
+            if(shakes!=0){
+            String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('shakes  ','" + shakes + "','"+ price.shakes*shakes  +"')";
             stmt.executeUpdate(excmd2);}
-            if(nmilk!=0){
-            String excmd3 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Night milk','" + nmilk + "','"+ price.nmilk*nmilk +"')";
+            if(icecream!=0){
+            String excmd3 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Icecream','" + icecream + "','"+ price.icecream*icecream +"')";
             stmt.executeUpdate(excmd3);}
             if(egg!=0){
             String excmd4 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Egg','" + egg + "','"+ price.egg*egg  +"')";
@@ -367,11 +368,11 @@ try {
             String excmd41 = "UPDATE eggs set quantity = quantity +"+egg+",amount = amount +"+price.egg*egg+" WHERE date = CURDATE()";
             stmt.executeUpdate(excmd41);
             }
-            if(paneerbhurzi!=0){
-            String excmd5 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Paneerbhurzi','" + paneerbhurzi + "','"+ price.paneerbhurzi*paneerbhurzi  +"')";
+            if(coldcoffee!=0){
+            String excmd5 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('coldcoffee','" + coldcoffee + "','"+ price.coldcoffee*coldcoffee  +"')";
             stmt.executeUpdate(excmd5);}
-            if(butter!=0){
-            String excmd6 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('ButterORveg','" + butter + "','"+ price.butter*butter +"')";
+            if(veg!=0){
+            String excmd6 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('veg','" + veg + "','"+ price.veg*veg +"')";
             stmt.executeUpdate(excmd6);}
             
             this.dispose();
@@ -382,7 +383,7 @@ try {
        catch (Exception e){
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-            "root","tiger");
+            "root","tigress");
             Statement stmt =con.createStatement();
             Statement stmt1 =con.createStatement();
             String table_name = "s"+detail.roll;
@@ -392,11 +393,11 @@ try {
             if(number1!=0){
             String excmd1 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('" + other.item1 + "','" + number1 + "','"+ other.price1*number1  +"')";
             stmt.executeUpdate(excmd1);}
-            if(mmilk!=0){
-            String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Morning milk  ','" + mmilk + "','"+ price.mmilk*mmilk  +"')";
+            if(shakes!=0){
+            String excmd2 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('shakes  ','" + shakes + "','"+ price.shakes*shakes  +"')";
             stmt.executeUpdate(excmd2);}
-            if(nmilk!=0){
-            String excmd3 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Night milk','" + nmilk + "','"+ price.nmilk*nmilk +"')";
+            if(icecream!=0){
+            String excmd3 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Icecream','" + icecream + "','"+ price.icecream*icecream +"')";
             stmt.executeUpdate(excmd3);}
             if(egg!=0){
             String excmd4 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Egg','" + egg + "','"+ price.egg*egg  +"')";
@@ -404,11 +405,11 @@ try {
             String excmd41 = "UPDATE eggs set quantity = quantity +"+egg+",amount = amount +"+price.egg*egg+" WHERE date = CURDATE()";
             stmt.executeUpdate(excmd41);
             }
-            if(paneerbhurzi!=0){
-            String excmd5 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('Paneerbhurzi','" + paneerbhurzi + "','"+ price.paneerbhurzi*paneerbhurzi  +"')";
+            if(coldcoffee!=0){
+            String excmd5 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('coldcoffee','" + coldcoffee + "','"+ price.coldcoffee*coldcoffee  +"')";
             stmt.executeUpdate(excmd5);}
-            if(butter!=0){
-            String excmd6 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('ButterORveg','" + butter + "','"+ price.butter*butter +"')";
+            if(veg!=0){
+            String excmd6 = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('veg','" + veg + "','"+ price.veg*veg +"')";
             stmt.executeUpdate(excmd6);}
             this.dispose();
             roll1 second = new roll1(); 

@@ -168,7 +168,7 @@ public class mstudent extends javax.swing.JFrame {
             try {
                 Class.forName("java.sql.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                    "root","tiger");
+                    "root","tigress");
                 Statement stmt =con.createStatement();
                 String table_name = "s"+detail.roll;
                 String table = "create table "+table_name+"(s_no int primary key auto_increment,extra varchar(50),date timestamp,price int,number int);";
@@ -183,7 +183,7 @@ public class mstudent extends javax.swing.JFrame {
             catch (Exception e){
                 Class.forName("java.sql.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
-                    "root","tiger");
+                    "root","tigress");
                 Statement stmt =con.createStatement();
                 String table_name = "s"+detail.roll;
                 String excmd = "INSERT INTO "+table_name+"(extra,number,price) VALUES ('" + menud.menu +" " +number + "','" + 1 + "','"+ menud.price  +"')";

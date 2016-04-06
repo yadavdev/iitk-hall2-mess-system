@@ -5,7 +5,7 @@ import sys
 # Opening databse connection
 # Preparing cursor object 
 try:
-	db = MySQLdb.connect("localhost","root","tiger","test")
+	db = MySQLdb.connect("localhost","root","tigress","test")
 	cursor = db.cursor()
 except MySQLdb.Error, e:
 	print "Database Connection Error"
@@ -13,9 +13,9 @@ except MySQLdb.Error, e:
 
 
 # Adding students to database
-y13 = open("y13.txt")
-y14 = open("y14.txt")
-y15 = open("y15.txt")
+y12 = open("hall9_list.txt")
+#y14 = open("y14.txt")
+#y15 = open("y15.txt")
 
 
 
@@ -74,8 +74,8 @@ cursor.execute(createtable)
 
 print "Created new login table. Use mysql to insert login credentials using \"INSERT into LOGIN (id,password) values (\"myuser\",\"mypassword\") \""
 
-for i in range(190):
-	data = y13.readline()
+for i in range(448):
+	data = y12.readline()
 	data = data.split()
 	rollno = int(data[0])
 	name = ' '.join(data[1:]) #create table "+table_name+"(s_no int primary key auto_increment,extra varchar(50),date timestamp,price int,number int);
@@ -92,43 +92,43 @@ for i in range(190):
 	#cursor.execute('insert into '+'s'+str(rollno) +(' (s_no ,name,rollno) values ("%d","%s", "%d")' % (i+1,name, rollno)))
 	db.commit()
 
-for i in range(200):
-	data = y14.readline()
-	data = data.split()
-	rollno = int(data[0])
-	name = ' '.join(data[1:])
-	createtable = "CREATE TABLE "+'s'+str(rollno) + """(
-													s_no INT(6) not null auto_increment primary key,
-													date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-													extra VARCHAR(50),
-													price INT(6),
-													number INT(6))"""
+# for i in range(200):
+# 	data = y14.readline()
+# 	data = data.split()
+# 	rollno = int(data[0])
+# 	name = ' '.join(data[1:])
+# 	createtable = "CREATE TABLE "+'s'+str(rollno) + """(
+# 													s_no INT(6) not null auto_increment primary key,
+# 													date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+# 													extra VARCHAR(50),
+# 													price INT(6),
+# 													number INT(6))"""
 
-	cursor.execute(createtable)
+# 	cursor.execute(createtable)
 
-	cursor.execute('insert into dues (name,roll) values ("%s", "%d")' % (name, rollno))
-	#cursor.execute('insert into '+'s'+str(rollno) +(' (s_no ,name,rollno) values ("%d","%s", "%d")' % (0,name, rollno)))
-	db.commit()
+# 	cursor.execute('insert into dues (name,roll) values ("%s", "%d")' % (name, rollno))
+# 	#cursor.execute('insert into '+'s'+str(rollno) +(' (s_no ,name,rollno) values ("%d","%s", "%d")' % (0,name, rollno)))
+# 	db.commit()
 
-for i in range(207):
-	data = y15.readline()
-	data = data.split()
-	rollno = int(data[0])
-	name = ' '.join(data[1:])
-	createtable = "CREATE TABLE "+'s'+str(rollno) + """(
-													s_no INT(6) not null auto_increment primary key,
-													date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-													extra VARCHAR(50),
-													price INT(6),
-													number INT(6))"""
+# for i in range(207):
+# 	data = y15.readline()
+# 	data = data.split()
+# 	rollno = int(data[0])
+# 	name = ' '.join(data[1:])
+# 	createtable = "CREATE TABLE "+'s'+str(rollno) + """(
+# 													s_no INT(6) not null auto_increment primary key,
+# 													date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+# 													extra VARCHAR(50),
+# 													price INT(6),
+# 													number INT(6))"""
 
-	cursor.execute(createtable)
+# 	cursor.execute(createtable)
 
-	cursor.execute('insert into dues (name,roll) values ("%s", "%d")' % (name, rollno))
-	#cursor.execute('insert into '+'s'+str(rollno)+(' (s_no ,name,rollno) values ("%d","%s", "%d")' % (0,name, rollno)))
-	db.commit()
+# 	cursor.execute('insert into dues (name,roll) values ("%s", "%d")' % (name, rollno))
+# 	#cursor.execute('insert into '+'s'+str(rollno)+(' (s_no ,name,rollno) values ("%d","%s", "%d")' % (0,name, rollno)))
+# 	db.commit()
 
 db.close()
-y13.close()
-y14.close()
-y15.close()
+y12.close()
+# y14.close()
+# y15.close()
